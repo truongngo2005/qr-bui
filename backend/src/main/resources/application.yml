@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: coffee-shift-system
+  profiles:
+    active: mysql
+  flyway:
+    enabled: false
+  mvc:
+    format:
+      date: yyyy-MM-dd
+      date-time: yyyy-MM-dd HH:mm:ss
+
+app:
+  jwt:
+    secret: CoffeeShopSuperSecretKeyForJwtAuthenticationTokensMustBeLongEnough2026CoffeeShift
+    expiration-ms: 86400000 # 24 hours
+  cors:
+    allowed-origins: "http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:3000"
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: method
+
+logging:
+  level:
+    root: INFO
+    com.coffeeshop.shiftsystem: INFO
